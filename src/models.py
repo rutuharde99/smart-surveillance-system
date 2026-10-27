@@ -63,6 +63,11 @@ class ProcessedFrame:
     motion_regions: List[MotionRegion]
     processing_time_ms: float
 
+    # SafeVision crowd analysis
+    person_count: int = 0
+    crowd_status: str = "NORMAL"
+    crowd_detected: bool = False
+    high_crowd: bool = False
 
 @dataclass
 class Alert:

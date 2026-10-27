@@ -1,47 +1,41 @@
- # Smart Surveillance System Configuration File
+# Smart Surveillance System Configuration File
 
 # Object Detection Settings
 object_detection:
-  model_path: "yolov8n.pt"  # YOLOv8 nano model (fastest, good for CPU)
-  detection_threshold: 0.5  # Confidence threshold (0.1 - 0.9)
-  target_classes:  # Object classes to detect
+  model_path: "yolov8n.pt"
+  detection_threshold: 0.5
+  target_classes:
     - person
-    - book
-    - cell phone
-    - bottle
-    - glasses
-    - specs
-    - sunglasses  # Can detect pens as bottle sometimes
 
 # Motion Detection Settings
 motion_detection:
-  sensitivity: "low"  # Options: low, medium, high (set to low to reduce noise)
-  min_area: 500  # Minimum pixel area to consider as motion (increased to filter small movements)
+  sensitivity: "low"
+  min_area: 500
 
 # Display Settings
 display:
   enabled: true
-  window_name: "Smart Surveillance"
+  window_name: "SafeVision"
 
 # Snapshot Settings
 snapshot:
   enabled: true
   directory: "snapshots"
-  rate_limit: 1.0  # Minimum seconds between snapshots
+  rate_limit: 1.0
 
 # Logging Settings
 logging:
   directory: "logs"
-  max_size_mb: 10  # Maximum log file size before rotation
+  max_size_mb: 10
 
 # Alert Settings
 alerts:
-  classes:  # Object classes that trigger alerts
+  classes:
     - person
-  cooldown: 5.0  # Minimum seconds between alerts for same class
+  cooldown: 5.0
 
 # Performance Settings
 performance:
   target_fps: 10
   preprocessing_enabled: false
-  resize_width: null  # Set to integer to resize frames (e.g., 640)
+  resize_width: null
